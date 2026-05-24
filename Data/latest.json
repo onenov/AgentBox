@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "notes": "",
+  "pub_date": "2026-05-24T19:35:36.803Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSUXRocE9renhEZTYvWFgyTURSWGZ3OStyeXg5NW43N0NtWGxwRUpXMUxEMGw4ZlBsNXUwS3ZjajBjVHczU1ltU1NiTnhBSWlYd1puZ0ZhcDZZZWo3NjY5RG9nb215Z0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5NjUwODk2CWZpbGU6QWdlbnRCb3guYXBwLnRhci5negphOG1xWjFsU0N3ZWlWaUtLWmlMRGJyMVNjaWNhdDEzeGRtUjFqRHdIT1R1d25zbHhlUys2UkI5c3BRVnZGcWE2Slp0a2V1NkRKbGtDaC9pdHR5UTlDQT09Cg==",
+      "url": "https://annex.orence.net/agentbox/1.0.0/macos/arm64/updater/AgentBox_1.0.0_aarch64.app.tar.gz",
+      "dmgurl": "https://annex.orence.net/agentbox/1.0.0/macos/arm64/dmg/AgentBox_1.0.0_aarch64.dmg"
+    },
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSUXRocE9renhEZTRHM1I1L1RTbmNxeHJ5ZXRWT1FYS056Z3c5c0V5UWtpMFpPV0x6ZEl1QkU0UW1oaUZHVEhDN012aVpNampnSUd3bFpvbHcyWXhodzVtVG1EbUw1TEFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5NjUwNzc0CWZpbGU6QWdlbnRCb3guYXBwLnRhci5nego1cjYyeDVqRVE1NkNuYi85QmxKSDNVVjZGZFFsWkcxNHdRUjBEeGV6Y1VLS2dJa1I0OHMzYzJGa1d2NElUUFYyd0ZWYTFRZWRTWlVBM08yclFiVy9DQT09Cg==",
+      "url": "https://annex.orence.net/agentbox/1.0.0/macos/x64/updater/AgentBox_1.0.0_x64.app.tar.gz",
+      "dmgurl": "https://annex.orence.net/agentbox/1.0.0/macos/x64/dmg/AgentBox_1.0.0_x64.dmg"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSUXRocE9renhEZTQzeWNFRzFXYm1POTIvVVpFdUl2WTF5WmpvbWVsaHFJNU9hUlM5eHJCeGVrdnRTWXlEM1JEYk4ydlhaVTV5QzRON1lHVUY4MVhJWmRBY0RlVFQ1T1F3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5NjUxMDkwCWZpbGU6QWdlbnRCb3hfMS4wLjBfeDY0LXNldHVwLmV4ZQpkd0p5dVZBbGdYbHFybG5DMWp5cnQyZDRsKzhjZ3BPVlliZUdVQmFZdVp1UGI5eXI1S0lCNkkzYWFXd3drWW9lWEc2K0U0OE9Vc2tiS0tZWWdhcVZDdz09Cg==",
+      "url": "https://annex.orence.net/agentbox/1.0.0/windows/x64/nsis/AgentBox_1.0.0_x64-setup.exe"
+    },
+    "windows-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSUXRocE9renhEZTdLSnp4S0Fac2RCZTU5L3VOYzNVR2Fwa1JWeTlGVDk5K3l6YmwxekYvRXM2cW1oVHBnKzZZZVFCL0syWnZrSStkS0MwS3orbjJrTHI5YkgrVDgxeFFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5NjUxMzA4CWZpbGU6QWdlbnRCb3hfMS4wLjBfYXJtNjQtc2V0dXAuZXhlCkJkbS9TRHEwYlhJK0NTV1E0TXkwam1qV21LUUhlcm0vNmF4Q3RNckpxUXhIYlA0dHJMNjZvV1lwLzN5VXljQVpGaFMrb1ZQUGdZRUJPQXV3Mmp1R0RBPT0K",
+      "url": "https://annex.orence.net/agentbox/1.0.0/windows/arm64/nsis/AgentBox_1.0.0_arm64-setup.exe"
+    }
+  },
+  "downloads": {
+    "linux": {
+      "x64": {
+        "url": "https://annex.orence.net/agentbox/1.0.0/linux/x64/backend/agentbox",
+        "sha256": "8eb8e7a4fce024872968cc9f31469bcb1493a24c6b676de9d951706af626e53e",
+        "size": 32501922
+      },
+      "arm64": {
+        "url": "https://annex.orence.net/agentbox/1.0.0/linux/arm64/backend/agentbox",
+        "sha256": "590e583f4a0042047b7a4b918fbeae105d2885502ba518076dedded959e9cb15",
+        "size": 30015650
+      }
+    }
+  }
+}

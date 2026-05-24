@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,  user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="language" content="zh-CN" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      http-equiv="Accept-CH"
+      content="Sec-CH-UA-Arch, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Bitness, Sec-CH-UA-Wow64"
+    />
+    <script src="/config.js"></script>
+    <script src="/sw.js"></script>
+    <!-- PWA -->
+    <link rel="manifest" href="/pwa/manifest.webmanifest" type="application/manifest+json" />
+    <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png" sizes="180x180" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

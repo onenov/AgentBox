@@ -1,0 +1,138 @@
+# AgentBox 独立部署模板
+#
+# 使用方式：
+#   1. cp .env.example .env
+#   2. 按实际域名、端口、访问凭据修改 .env
+#   3. docker compose up -d
+#
+# 默认镜像是已发布到阿里云 ACR 的 linux/amd64 镜像：
+#   crpi-k39e7iu8opdpbjdg.cn-hangzhou.personal.cr.aliyuncs.com/orence/agentbox:1.0.0
+#
+# 这个容器会同时提供：
+#   - AgentBox Web 控制台：容器内 8787
+#   - OpenClaw Gateway：容器内 18789，用户在 AgentBox 内安装 OpenClaw 后由容器守护逻辑自动启动
+#   - WebDAV：容器内 80，目录指向 /root/.AgentBox-Data
+
+services:
+  agentbox:
+    # AgentBox 运行镜像。生产环境建议固定版本号，不要直接使用 latest。
+    image: ${AGENTBOX_IMAGE:-crpi-k39e7iu8opdpbjdg.cn-hangzhou.personal.cr.aliyuncs.com/orence/agentbox:1.0.0}
+
+    # 容器名称。单机部署多个实例时必须改成不同名称。
+    container_name: ${AGENTBOX_CONTAINER_NAME:-agentbox}
+
+    # Docker 或服务器重启后自动拉起容器；手动 stop 后不会自动重启。
+    restart: unless-stopped
+
+    # 让 Docker 注入 tini 作为 init 进程，帮助回收子进程。
+    init: true
+
+    environment:
+      # 基础运行环境。
+      TZ: ${TZ:-Asia/Shanghai}
+      TERM: xterm-256color
+      APP_ENV: production
+      SERVER_HOST: 0.0.0.0
+      SERVER_PORT: 8787
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+
+      # 统一持久化根目录。
+      # 宿主机只需要挂载一个目录到 /root/.AgentBox-Data。
+      # 容器启动时会把 /root/.openclaw、/root/.hermes、/root/.cc-connect、
+      # /root/.codex、/root/.claude 软链接到这个根目录下的子目录。
+      HOME: /root
+      AGENTBOX_DATA_ROOT: /root/.AgentBox-Data
+      OPENCLAW_HOME: /root
+      NPM_CONFIG_PREFIX: /root/.npm-global
+
+      # Node 编译缓存是运行缓存，不放进 WebDAV 可见的数据根。
+      NODE_COMPILE_CACHE: /var/cache/agentbox/node-compile-cache
+
+      # 容器内由 AgentBox/入口脚本直接管理 Gateway，不依赖 systemd。
+      OPENCLAW_NO_RESPAWN: "1"
+      OPENCLAW_GATEWAY_BIND: lan
+      OPENCLAW_GATEWAY_AUTOSTART: "1"
+      OPENCLAW_DISABLE_BONJOUR: "1"
+      # WebDAV 直接暴露统一数据根目录；OpenClaw 工作区使用 OpenClaw 自己的默认目录。
+      WEBDAV_ROOT: /root/.AgentBox-Data
+
+      # AgentBox 自身的数据和认证配置。
+      DATABASE_URL: file:/root/.AgentBox-Data/agentbox/data.db
+      AUTH_CONFIG_PATH: /root/.AgentBox-Data/agentbox/auth.json
+
+      # 可选：固定 AgentBox 登录 Token。留空时由 AgentBox 自动生成认证配置。
+      AUTH_DEFAULT_TOKEN: ${AUTH_DEFAULT_TOKEN:-}
+
+      # 反代/公网访问相关配置。
+      # AGENTBOX_PUBLIC_URL：用户实际打开 AgentBox 的地址，会加入 OpenClaw Control UI allowedOrigins。
+      # OPENCLAW_PUBLIC_GATEWAY_URL：浏览器直连 OpenClaw Gateway 时使用的公网地址。
+      AGENTBOX_PUBLIC_URL: ${AGENTBOX_PUBLIC_URL:-}
+      AGENTBOX_CONTROL_UI_ORIGINS: ${AGENTBOX_CONTROL_UI_ORIGINS:-}
+      OPENCLAW_PUBLIC_GATEWAY_URL: ${OPENCLAW_PUBLIC_GATEWAY_URL:-}
+      OPENCLAW_GATEWAY_TOKEN: ${OPENCLAW_GATEWAY_TOKEN:-}
+      OPENCLAW_ALLOW_INSECURE_PRIVATE_WS: ${OPENCLAW_ALLOW_INSECURE_PRIVATE_WS:-}
+
+      # AgentBox 会从清单拉取最新 Linux 二进制。容器内有轻量更新循环，
+      # 更新成功后只重启 AgentBox 子进程，不重启整个容器。
+      AGENTBOX_MANIFEST_URL: ${AGENTBOX_MANIFEST_URL:-https://agent.orence.net/releases/latest.json}
+      AGENTBOX_STRICT_SHA256: ${AGENTBOX_STRICT_SHA256:-0}
+      AGENTBOX_AUTO_UPDATE: ${AGENTBOX_AUTO_UPDATE:-1}
+      AGENTBOX_UPDATE_INTERVAL_SECONDS: ${AGENTBOX_UPDATE_INTERVAL_SECONDS:-3600}
+
+      # 兼容路径。它们会被入口脚本软链接到 /root/.AgentBox-Data 下。
+      HERMES_HOME: /root/.hermes
+      CC_CONNECT_CONFIG: /root/.cc-connect/config.toml
+      CODEX_HOME: /root/.codex
+      CLAUDE_CONFIG_DIR: /root/.claude
+
+      # 模型列表和初始化配置。
+      MODEL_CATALOG_URL: ${MODEL_CATALOG_URL:-https://agent.orence.net/releases/models.json}
+      MODEL_INITIALIZATION_URL: ${MODEL_INITIALIZATION_URL:-https://agent.orence.net/releases/model-initialization.json}
+
+      # 避免本机回环请求走代理。
+      NO_PROXY: 127.0.0.1,localhost,::1
+
+      # 内置 WebDAV。开启后会把 /root/.AgentBox-Data 暴露为 WebDAV 根目录。
+      WEBDAV_ENABLED: ${WEBDAV_ENABLED:-1}
+      WEBDAV_ADDR: :80
+      WEBDAV_USER: ${WEBDAV_USER:-}
+      WEBDAV_PASS: ${WEBDAV_PASS:-}
+
+      # Python/uv 默认使用阿里云 PyPI 镜像。
+      PIP_INDEX_URL: https://mirrors.aliyun.com/pypi/simple/
+      PIP_TRUSTED_HOST: mirrors.aliyun.com
+      UV_DEFAULT_INDEX: https://mirrors.aliyun.com/pypi/simple/
+      UV_INDEX_URL: https://mirrors.aliyun.com/pypi/simple/
+      UV_NATIVE_TLS: "true"
+
+    volumes:
+      # 实例全部持久化数据。不要再单独区分 Data / Workspace。
+      - ${AGENTBOX_DATA_DIR:-./data}:/root/.AgentBox-Data
+
+    ports:
+      # AgentBox Web 控制台。
+      - "${AGENTBOX_PORT:-8787}:8787"
+
+      # OpenClaw Gateway。安装并启动 OpenClaw 后可访问。
+      - "${OPENCLAW_GATEWAY_PORT:-18789}:18789"
+
+      # WebDAV。默认宿主机 8080 -> 容器 80。
+      - "${WEBDAV_PORT:-8080}:80"
+
+    extra_hosts:
+      # 允许容器通过 host.docker.internal 访问宿主机服务。
+      - "host.docker.internal:host-gateway"
+
+    healthcheck:
+      # AgentBox 健康检查。失败不会自动重建容器，但 docker ps 会显示 unhealthy。
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:8787/health').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

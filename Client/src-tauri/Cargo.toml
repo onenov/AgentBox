@@ -1,0 +1,28 @@
+[package]
+name = "agentbox"
+version = "1.0.0"
+edition = "2021"
+description = "AgentBox shell"
+authors = ["AgentBox"]
+license = "MIT"
+
+[lib]
+name = "agentbox_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+tauri = { version = "2", features = ["macos-private-api", "tray-icon", "image-png"] }
+tauri-plugin-autostart = "2.5.1"
+tauri-plugin-shell = "2"
+tauri-plugin-opener = "2"
+url = "2"
+tauri-plugin-updater = "2"
+tauri-plugin-process = "2"
+
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+window-vibrancy = "0.6"

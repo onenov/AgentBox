@@ -1,0 +1,35 @@
+{
+  "git": {
+    "windows": {
+      "x64": {
+        "url": "https://annex.orence.net/App/Git/Git-2.54.0-64-bit.exe"
+      },
+      "arm64": {
+        "url": "https://annex.orence.net/App/Git/Git-2.54.0-arm64.exe"
+      }
+    }
+  },
+  "nodejs": {
+    "windows": {
+      "x64": {
+        "url": "https://annex.orence.net/App/Nodejs/node-v24.15.0-x64.msi"
+      },
+      "arm64": {
+        "url": "https://annex.orence.net/App/Nodejs/node-v24.15.0-arm64.msi"
+      }
+    },
+    "macos": {
+      "x64": {
+        "url": "https://annex.orence.net/App/Nodejs/node-v24.15.0-x64.pkg"
+      },
+      "arm64": {
+        "url": "https://annex.orence.net/App/Nodejs/node-v24.15.0-arm.pkg"
+      }
+    }
+  },
+  "homebrew": {
+    "macos": {
+      "url": "https://annex.orence.net/App/Homebrew/Homebrew.pkg"
+    }
+  }
+}

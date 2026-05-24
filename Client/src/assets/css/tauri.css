@@ -1,0 +1,151 @@
+html.tauri,
+body.tauri {
+  background: transparent;
+}
+
+html.tauri {
+  min-height: 100vh;
+  --tauri-bg: #fff;
+  --tauri-window-radius: 12px;
+}
+
+html.tauri.dark {
+  --tauri-bg: #000;
+}
+
+html.tauri.tauri-macos {
+  --tauri-window-radius: 24px;
+  --tauri-window-segment-radius: 20px;
+}
+
+html.tauri.tauri-windows {
+  --tauri-window-radius: 8px;
+  --tauri-window-segment-radius: 8px;
+}
+
+html.tauri body {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  border-radius: var(--tauri-window-radius);
+}
+
+html.tauri body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  border-radius: var(--tauri-window-radius);
+  background: color-mix(in oklch, var(--tauri-bg) 80%, transparent);
+  pointer-events: none;
+}
+
+html.tauri:not(.tauri-windows) body::before {
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+html.tauri.tauri-windows body::before {
+  background: color-mix(in oklch, var(--tauri-bg) 72%, transparent);
+}
+
+html.tauri body::after {
+  border-radius: var(--tauri-window-radius);
+}
+
+html.tauri body #root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  overflow: hidden;
+  border-radius: var(--tauri-window-radius);
+}
+
+html.tauri body .tauri-public-titlebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  height: 44px;
+  align-items: center;
+  padding-inline: 24px;
+}
+
+html.tauri body .sidebar--floating {
+  border-radius: var(--tauri-window-segment-radius) !important;
+}
+
+html.tauri body .segment__indicator {
+  border-radius: var(--tauri-window-radius) !important;
+}
+
+html.tauri body .modal__backdrop--blur{
+  border-radius: var(--tauri-window-radius);
+}
+
+html.tauri body .modal__backdrop--opaque{
+  border-radius: var(--tauri-window-radius);
+}
+
+
+.backdrop {
+  border-radius: var(--tauri-window-radius);
+}
+
+.alert-dialog__backdrop--opaque {
+  border-radius: var(--tauri-window-radius);
+}
+
+.tauri-traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 12px;
+  line-height: 0;
+  min-width: 52px;
+}
+
+.tauri-traffic-light {
+  display: inline-flex;
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.55);
+  cursor: default;
+  transition: filter 0.15s ease, background-color 0.15s ease;
+}
+
+.tauri-traffic-light svg {
+  display: block;
+}
+
+.tauri-traffic-light:active {
+  filter: brightness(0.82);
+}
+
+.tauri-traffic-light--close {
+  background: #ff5f57;
+}
+
+.tauri-traffic-light--minimize {
+  background: #febc2e;
+}
+
+.tauri-traffic-light--maximize {
+  background: #28c840;
+}
+
+.tauri-traffic-lights:not(.is-focused) .tauri-traffic-light {
+  background: #d6d6d6;
+}
+
+html.tauri body .sidebar__offcanvas-wrapper .sidebar__header {
+  padding-top: calc(var(--spacing, .25rem) * 4);
+}

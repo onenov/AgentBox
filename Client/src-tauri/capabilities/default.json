@@ -1,0 +1,42 @@
+{
+  "identifier": "default",
+  "description": "AgentBox desktop permissions",
+  "windows": ["main"],
+  "remote": {
+    "urls": [
+      "http://localhost:*",
+      "http://127.0.0.1:*"
+    ]
+  },
+  "permissions": [
+    "core:path:default",
+    "core:event:default",
+    "core:app:default",
+    "core:image:default",
+    "core:resources:default",
+    "core:menu:default",
+    "core:tray:default",
+    "core:window:default",
+    "core:window:allow-start-dragging",
+    "core:window:allow-close",
+    "core:window:allow-minimize",
+    "core:window:allow-toggle-maximize",
+    "allow-get-startup-preferences",
+    "allow-set-startup-preferences",
+    "allow-get-theme-preferences",
+    "allow-set-theme-preferences",
+    "allow-get-auth-preferences",
+    "allow-get-desktop-storage-value",
+    "allow-set-desktop-storage-value",
+    "allow-remove-desktop-storage-value",
+    "allow-clear-desktop-storage",
+    "allow-get-desktop-update-target",
+    "allow-prepare-desktop-update",
+    "allow-open-external-url",
+    "autostart:allow-enable",
+    "autostart:allow-disable",
+    "autostart:allow-is-enabled",
+    "updater:default",
+    "process:default"
+  ]
+}

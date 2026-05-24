@@ -1,0 +1,559 @@
+[
+    {
+        "key": "openai",
+        "label": "OpenAI",
+        "icon": "OpenAI.svg",
+        "baseUrl": "https://api.openai.com/v1",
+        "modelApi": "openai-completions",
+        "assistantApiType": "openai",
+        "docsUrl": "https://developers.openai.com/api/docs/models",
+        "apiKeyUrl": "https://platform.openai.com/api-keys",
+        "models": [
+            {
+                "id": "gpt-5.5",
+                "name": "GPT-5.5",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "gpt-5.4-pro-2026-03-05",
+                "name": "GPT-5.4 Pro",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "gpt-5.4",
+                "name": "GPT-5.4",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": true
+            }
+        ]
+    },
+    {
+        "key": "anthropic",
+        "label": "Anthropic",
+        "icon": "Anthropic.svg",
+        "baseUrl": "https://api.anthropic.com",
+        "modelApi": "anthropic-messages",
+        "assistantApiType": "anthropic",
+        "docsUrl": "https://platform.claude.com/docs/zh-CN/about-claude/models/overview",
+        "apiKeyUrl": "https://platform.claude.com/settings/keys",
+        "models": [
+            {
+                "id": "claude-opus-4-6-thinking",
+                "name": "Claude Opus 4.6 Thinking",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "claude-opus-4-6",
+                "name": "Claude Opus 4.6",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "claude-sonnet-4-6",
+                "name": "Claude Sonnet 4.6",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "claude-opus-4-5-20251101-thinking",
+                "name": "Claude Opus 4.5 Thinking",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "claude-opus-4-5-20251101",
+                "name": "Claude Opus 4.5",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "claude-sonnet-4-5-20250929-thinking",
+                "name": "Claude Sonnet 4.5 Thinking",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "claude-sonnet-4-5-20250929",
+                "name": "Claude Sonnet 4.5",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "claude-haiku-4-5-20251001-thinking",
+                "name": "Claude Haiku 4.5 Thinking",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "claude-haiku-4-5-20251001",
+                "name": "Claude Haiku 4.5",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            }
+        ]
+    },
+    {
+        "key": "deepseek",
+        "label": "DeepSeek",
+        "icon": "DeepSeek.svg",
+        "baseUrl": "https://api.deepseek.com/v1",
+        "modelApi": "openai-completions",
+        "assistantApiType": "openai",
+        "docsUrl": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+        "apiKeyUrl": "https://platform.deepseek.com/api_keys",
+        "models": [
+            {
+                "id": "deepseek-v4-pro",
+                "name": "DeepSeek V4 Pro",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "deepseek-v4-flash",
+                "name": "DeepSeek V4 Flash",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "deepseek-reasoner",
+                "name": "DeepSeek R1",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "deepseek-chat",
+                "name": "DeepSeek V3",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": false
+            }
+        ]
+    },
+    {
+        "key": "google",
+        "label": "Google",
+        "icon": "Google.svg",
+        "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+        "modelApi": "google-generative-ai",
+        "assistantApiType": "google-gemini",
+        "docsUrl": "https://ai.google.dev/gemini-api/docs/models",
+        "apiKeyUrl": "https://aistudio.google.com/app/apikey",
+        "models": [
+            {
+                "id": "gemini-3.1-pro-preview",
+                "name": "Gemini 3.1 Pro Preview",
+                "contextWindow": 1048576,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "gemini-3.1-flash-lite-preview",
+                "name": "Gemini 3.1 Flash Lite Preview",
+                "contextWindow": 1048576,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "gemini-3.1-flash-image-preview",
+                "name": "Gemini 3.1 Flash Image Preview",
+                "contextWindow": 1048576,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "gemini-3-pro-preview",
+                "name": "Gemini 3 Pro Preview",
+                "contextWindow": 1048576,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "gemini-3-flash-preview",
+                "name": "Gemini 3 Flash Preview",
+                "contextWindow": 1048576,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "gemini-3-pro-image-preview",
+                "name": "Gemini 3 Pro Image Preview",
+                "contextWindow": 1048576,
+                "reasoning": true,
+                "vision": true
+            }
+        ]
+    },
+    {
+        "key": "zhipu",
+        "label": "智谱",
+        "icon": "ChatGLM.svg",
+        "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+        "modelApi": "openai-completions",
+        "assistantApiType": "openai",
+        "docsUrl": "https://docs.bigmodel.cn/cn/guide/models/",
+        "apiKeyUrl": "https://bigmodel.cn/usercenter/proj-mgmt/apikeys",
+        "models": [
+            {
+                "id": "glm-5.1",
+                "name": "GLM-5.1",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "glm-5-turbo",
+                "name": "GLM-5 Turbo",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "glm-5v-turbo",
+                "name": "GLM-5V Turbo",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "glm-5",
+                "name": "GLM-5",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "glm-4.7",
+                "name": "GLM-4.7",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "glm-4.7-flash",
+                "name": "GLM-4.7 Flash",
+                "contextWindow": 128000,
+                "vision": false
+            },
+            {
+                "id": "glm-4.7-flashx",
+                "name": "GLM-4.7 FlashX",
+                "contextWindow": 128000,
+                "vision": false
+            }
+        ]
+    },
+    {
+        "key": "minimax",
+        "label": "MiniMax",
+        "icon": "Minimax.svg",
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "modelApi": "anthropic-messages",
+        "assistantApiType": "anthropic",
+        "docsUrl": "https://platform.minimaxi.com/docs/guides/text-generation",
+        "apiKeyUrl": "https://platform.minimaxi.com/user-center/basic-information/interface-key",
+        "models": [
+            {
+                "id": "MiniMax-M2.7",
+                "name": "MiniMax M2.7",
+                "contextWindow": 204800,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "MiniMax-M2.7-highspeed",
+                "name": "MiniMax M2.7 Highspeed",
+                "contextWindow": 204800,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "MiniMax-M2.5",
+                "name": "MiniMax M2.5",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "MiniMax-M2.5-highspeed",
+                "name": "MiniMax M2.5 Highspeed",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "MiniMax-M2.1",
+                "name": "MiniMax M2.1",
+                "contextWindow": 128000,
+                "vision": false
+            },
+            {
+                "id": "MiniMax-M2.1-highspeed",
+                "name": "MiniMax M2.1 Highspeed",
+                "contextWindow": 128000,
+                "vision": false
+            }
+        ]
+    },
+    {
+        "key": "siliconflow",
+        "label": "硅基流动",
+        "icon": "SiliconFlow.svg",
+        "baseUrl": "https://api.siliconflow.cn/v1",
+        "modelApi": "openai-completions",
+        "assistantApiType": "openai",
+        "docsUrl": "https://cloud.siliconflow.cn/me/models",
+        "apiKeyUrl": "https://cloud.siliconflow.cn/me/account/ak",
+        "models": [
+            {
+                "id": "Qwen/Qwen3.6-35B-A3B",
+                "name": "Qwen3.6 35B A3B",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "Qwen/Qwen3.6-27B",
+                "name": "Qwen3.6 27B",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "Pro/moonshotai/Kimi-K2.6",
+                "name": "Kimi K2.6 Pro",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "Pro/zai-org/GLM-5.1",
+                "name": "GLM-5.1 Pro",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "deepseek-ai/DeepSeek-V4-Flash",
+                "name": "DeepSeek V4 Flash",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "Pro/deepseek-ai/DeepSeek-V3.2",
+                "name": "DeepSeek V3.2",
+                "contextWindow": 160000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "deepseek-ai/DeepSeek-V3.2",
+                "name": "DeepSeek V3.2",
+                "contextWindow": 160000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "Qwen/Qwen3.5-397B-A17B",
+                "name": "Qwen3.5 397B",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "Qwen/Qwen3.5-122B-A10B",
+                "name": "Qwen3.5 122B",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "Pro/moonshotai/Kimi-K2.5",
+                "name": "Kimi K2.5",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "MiniMaxAI/MiniMax-M2.5",
+                "name": "MiniMax M2.5",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "Pro/MiniMaxAI/MiniMax-M2.5",
+                "name": "MiniMax M2.5 Pro",
+                "contextWindow": 200000,
+                "reasoning": true,
+                "vision": false
+            }
+        ]
+    },
+    {
+        "key": "qwen",
+        "label": "千问",
+        "icon": "Tongyi.svg",
+        "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "modelApi": "openai-completions",
+        "assistantApiType": "openai",
+        "docsUrl": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/model-market/all",
+        "apiKeyUrl": "https://bailian.console.aliyun.com/cn-beijing/?tab=model#/api-key",
+        "models": [
+            {
+                "id": "qwen3.6-max-preview",
+                "name": "通义千问 3.6 Max Preview",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "qwen3.6-plus",
+                "name": "通义千问 3.6 Plus",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "qwen3.6-flash",
+                "name": "通义千问 3.6 Flash",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "qwen3.5-plus",
+                "name": "通义千问 3.5 Plus",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "qwen3.5-flash",
+                "name": "通义千问 3.5 Flash",
+                "contextWindow": 1000000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "qwen3-max",
+                "name": "通义千问 3 Max",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": false
+            }
+        ]
+    },
+    {
+        "key": "kimi",
+        "label": "KIMI",
+        "icon": "MoonShot.svg",
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "modelApi": "openai-completions",
+        "assistantApiType": "openai",
+        "docsUrl": "https://platform.kimi.com/docs/models",
+        "apiKeyUrl": "https://platform.kimi.com/console/api-keys",
+        "models": [
+            {
+                "id": "kimi-k2.6",
+                "name": "Kimi K2.6",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "kimi-k2.5",
+                "name": "Kimi K2.5",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "kimi-k2-0905-preview",
+                "name": "Kimi K2 0905 Preview",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "kimi-k2-turbo-preview",
+                "name": "Kimi K2 Turbo Preview",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "kimi-k2-thinking",
+                "name": "Kimi K2 Thinking",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": false
+            },
+            {
+                "id": "kimi-k2-thinking-turbo",
+                "name": "Kimi K2 Thinking Turbo",
+                "contextWindow": 256000,
+                "reasoning": true,
+                "vision": false
+            }
+        ]
+    },
+    {
+        "key": "volcano",
+        "label": "火山方舟",
+        "icon": "Volcengine.svg",
+        "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+        "modelApi": "openai-completions",
+        "assistantApiType": "openai",
+        "docsUrl": "https://console.volcengine.com/ark/region:ark+cn-beijing/model?groupType=ModelGroups&vendor=Bytedance&view=CARD_VIEW",
+        "apiKeyUrl": "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
+        "models": [
+            {
+                "id": "doubao-seed-2-0-pro-260215",
+                "name": "豆包 Seed 2.0 Pro",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "doubao-seed-2-0-lite-260215",
+                "name": "豆包 Seed 2.0 Lite",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "doubao-seed-2-0-mini-260215",
+                "name": "豆包 Seed 2.0 Mini",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": true
+            },
+            {
+                "id": "doubao-seed-2-0-code-preview-260215",
+                "name": "豆包 Seed 2.0 Code Preview",
+                "contextWindow": 128000,
+                "reasoning": true,
+                "vision": true
+            }
+        ]
+    }
+]

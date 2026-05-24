@@ -1,0 +1,82 @@
+services:
+  agentbox:
+    image: ${AGENTBOX_IMAGE:-agentbox:local}
+    build:
+      context: .
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HOME: /root
+      AGENTBOX_DATA_ROOT: /root/.AgentBox-Data
+      OPENCLAW_HOME: /root
+      NPM_CONFIG_PREFIX: /root/.npm-global
+      HOMEBREW_PREFIX: /home/linuxbrew/.linuxbrew
+      HOMEBREW_NO_ENV_HINTS: "1"
+      NODE_COMPILE_CACHE: /var/cache/agentbox/node-compile-cache
+      OPENCLAW_NO_RESPAWN: "1"
+      TERM: xterm-256color
+      PIP_INDEX_URL: https://mirrors.aliyun.com/pypi/simple/
+      PIP_TRUSTED_HOST: mirrors.aliyun.com
+      UV_DEFAULT_INDEX: https://mirrors.aliyun.com/pypi/simple/
+      UV_INDEX_URL: https://mirrors.aliyun.com/pypi/simple/
+      UV_NATIVE_TLS: "true"
+
+      APP_ENV: production
+      SERVER_HOST: 0.0.0.0
+      SERVER_PORT: 8787
+      DATABASE_URL: file:/root/.AgentBox-Data/agentbox/data.db
+      AUTH_CONFIG_PATH: /root/.AgentBox-Data/agentbox/auth.json
+      AUTH_DEFAULT_TOKEN: ${AUTH_DEFAULT_TOKEN:-}
+      AGENTBOX_PUBLIC_URL: ${AGENTBOX_PUBLIC_URL:-}
+      AGENTBOX_CONTROL_UI_ORIGINS: ${AGENTBOX_CONTROL_UI_ORIGINS:-}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+
+      AGENTBOX_MANIFEST_URL: ${AGENTBOX_MANIFEST_URL:-https://agent.orence.net/releases/latest.json}
+      AGENTBOX_STRICT_SHA256: ${AGENTBOX_STRICT_SHA256:-0}
+      AGENTBOX_AUTO_UPDATE: ${AGENTBOX_AUTO_UPDATE:-1}
+      AGENTBOX_UPDATE_INTERVAL_SECONDS: ${AGENTBOX_UPDATE_INTERVAL_SECONDS:-3600}
+      OPENCLAW_PUBLIC_GATEWAY_URL: ${OPENCLAW_PUBLIC_GATEWAY_URL:-}
+      OPENCLAW_GATEWAY_TOKEN: ${OPENCLAW_GATEWAY_TOKEN:-}
+      OPENCLAW_GATEWAY_BIND: ${OPENCLAW_GATEWAY_BIND:-lan}
+      OPENCLAW_GATEWAY_AUTOSTART: ${OPENCLAW_GATEWAY_AUTOSTART:-1}
+      OPENCLAW_DISABLE_BONJOUR: ${OPENCLAW_DISABLE_BONJOUR:-1}
+      OPENCLAW_ALLOW_INSECURE_PRIVATE_WS: ${OPENCLAW_ALLOW_INSECURE_PRIVATE_WS:-}
+      WEBDAV_ROOT: /root/.AgentBox-Data
+
+      HERMES_HOME: /root/.hermes
+      CC_CONNECT_CONFIG: /root/.cc-connect/config.toml
+      CODEX_HOME: /root/.codex
+      CLAUDE_CONFIG_DIR: /root/.claude
+      MODEL_CATALOG_URL: ${MODEL_CATALOG_URL:-https://agent.orence.net/releases/models.json}
+      MODEL_INITIALIZATION_URL: ${MODEL_INITIALIZATION_URL:-https://agent.orence.net/releases/model-initialization.json}
+      NO_PROXY: 127.0.0.1,localhost,::1
+
+      WEBDAV_ENABLED: ${WEBDAV_ENABLED:-1}
+      WEBDAV_ADDR: :80
+      WEBDAV_USER: ${WEBDAV_USER:-}
+      WEBDAV_PASS: ${WEBDAV_PASS:-}
+
+      TZ: ${OPENCLAW_TZ:-UTC}
+    volumes:
+      - ${AGENTBOX_DATA_DIR:-./data}:/root/.AgentBox-Data
+    ports:
+      - "${AGENTBOX_PORT:-8787}:8787"
+      - "${OPENCLAW_GATEWAY_PORT:-18789}:18789"
+      - "${WEBDAV_PORT:-8080}:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    init: true
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:8787/health').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

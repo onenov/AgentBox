@@ -1,0 +1,10 @@
+@import url("https://fonts.font.im/css2?family=DM+Sans:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Poppins:wght@100..900&family=Raleway:wght@100..900&display=swap");
+@import "tailwindcss";
+@import "@heroui/styles";
+@import "@heroui-pro/react/css";
+@import "./style.css";
+@import "./default-color.css";
+@import "./glass-color.css";
+@import "./theme.less";
+@import "./index.css";
+@import "./tauri.css";

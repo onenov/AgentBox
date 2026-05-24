@@ -1,0 +1,18 @@
+{
+    "data": {
+      "title": "精选推荐",
+      "description": "分享实用的 AI 与技术内容，感兴趣可以关注。",
+      "items": [
+        {
+          "id": "01",
+          "enabled": true,
+          "name": "公众号 泠轻子",
+          "type": "wechat_official",
+          "qrImage": "https://assets.orence.net/file/20260323015154751.png",
+          "link": "",
+          "description": "全栈开发者与架构师"
+        }
+      ]
+    }
+  }
+  

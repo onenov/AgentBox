@@ -1,0 +1,41 @@
+{
+    "data": {
+      "title": "社区交流群",
+      "description": "扫描二维码或点击链接，加入 ClawNex / OpenClaw 社区交流群。",
+      "items": [
+        {
+          "id": "01",
+          "enabled": true,
+          "name": "QQ群聊",
+          "type": "qq",
+          "qrImage": "https://assets.orence.net/file/20260311235108252.png",
+          "link": "https://qm.qq.com/q/octO5b625y"
+        },
+        {
+          "id": "02",
+          "enabled": true,
+          "name": "企业微信群聊",
+          "type": "wechat",
+          "qrImage": "https://assets.orence.net/file/20260311235834206.png",
+          "link": "https://work.weixin.qq.com/gm/fd9154c094ca2925bcb5a6c8c2592210"
+        },
+        {
+          "id": "03",
+          "enabled": true,
+          "name": "飞书群聊",
+          "type": "feishu",
+          "qrImage": "https://assets.orence.net/file/20260316035606535.png",
+          "link": "https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=684q8bf5-b34d-461f-817f-e8b777eba662"
+        },
+        {
+          "id": "04",
+          "enabled": false,
+          "name": "开发者微信",
+          "type": "wechat",
+          "qrImage": "https://assets.orence.net/file/20260311235313664.png",
+          "link": ""
+        }
+      ]
+    }
+  }
+  

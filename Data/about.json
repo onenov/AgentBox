@@ -1,0 +1,73 @@
+{
+    "data": {
+      "items": [
+        {
+          "id": "group-01",
+          "enabled": true,
+          "title": "文档中心",
+          "description": "查阅 OpenClaw、Hermes 与 CC-Connect 的官方文档，获取安装部署、配置调优与最佳实践指引。",
+          "content": [
+            {
+              "id": "01",
+              "enabled": true,
+              "icon": "https://assets.orence.net/file/20260521181142165.svg",
+              "title": "OpenClaw",
+              "buttonText": "查看",
+              "link": "https://docs.openclaw.ai/zh-CN"
+            },
+            {
+              "id": "02",
+              "enabled": true,
+              "icon": "https://assets.orence.net/file/20260521181132333.svg",
+              "title": "Hermes Agent",
+              "buttonText": "查看",
+              "link": "https://hermes-agent.nousresearch.com/docs"
+            },
+            {
+              "id": "03",
+              "enabled": true,
+              "icon": "https://assets.orence.net/file/20260521181149721.svg",
+              "title": "CC-Connect",
+              "buttonText": "查看",
+              "link": "https://github.com/chenhg5/cc-connect/blob/main/docs/usage.zh-CN.md"
+            }
+          ]
+        },
+        {
+          "id": "group-02",
+          "enabled": true,
+          "title": "相关项目",
+          "description": "快速了解生态中的核心项目、中文版本与社区技能资源，按需访问对应仓库。",
+          "content": [
+            {
+              "id": "01",
+              "enabled": true,
+              "icon": "https://assets.orence.net/file/20260316041508536.png",
+              "title": "OpenClaw",
+              "description": "你的专属个人AI助手。支持所有操作系统和平台。",
+              "buttonText": "访问仓库",
+              "link": "https://github.com/openclaw/openclaw"
+            },
+            {
+              "id": "02",
+              "enabled": true,
+              "icon": "https://assets.orence.net/file/20260316041508536.png",
+              "title": "Hermes Agent",
+              "description": "内置学习循环的智能体——它能从经验中积累技能，在使用过程中不断改进。",
+              "buttonText": "访问仓库",
+              "link": "https://github.com/nousresearch/hermes-agent"
+            },
+            {
+              "id": "03",
+              "enabled": true,
+              "icon": "https://assets.orence.net/file/20260316041508536.png",
+              "title": "CC-Connect",
+              "description": "运行在你机器上的 AI Agent 桥接到你日常使用的即时通讯工具。",
+              "buttonText": "访问仓库",
+              "link": "https://github.com/chenhg5/cc-connect"
+            }
+          ]
+        }
+      ]
+    }
+  }

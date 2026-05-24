@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-get-startup-preferences"
+description = "Enables the get_startup_preferences command without any pre-configured scope."
+commands.allow = ["get_startup_preferences"]
+
+[[permission]]
+identifier = "deny-get-startup-preferences"
+description = "Denies the get_startup_preferences command without any pre-configured scope."
+commands.deny = ["get_startup_preferences"]

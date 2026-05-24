@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-clear-desktop-storage"
+description = "Enables the clear_desktop_storage command without any pre-configured scope."
+commands.allow = ["clear_desktop_storage"]
+
+[[permission]]
+identifier = "deny-clear-desktop-storage"
+description = "Denies the clear_desktop_storage command without any pre-configured scope."
+commands.deny = ["clear_desktop_storage"]

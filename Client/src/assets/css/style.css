@@ -1,0 +1,46 @@
+@import "@heroui-pro/react/themes/glass";
+
+:root,
+.light,
+.default,
+[data-theme="light"],
+[data-theme="default"] {
+  --surface-shadow: none;
+  --overlay-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.12), 0 -4px 16px 0 rgba(0, 0, 0, 0.06), 0 24px 48px 0 rgba(0, 0, 0, 0.16);
+  --field-shadow: 0 0 0 0 transparent;
+  --radius: 0.5rem;
+  --field-radius: 0.75rem;
+  --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+
+.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --overlay-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.5) inset;
+  --radius: 0.5rem;
+  --field-radius: 0.75rem;
+  --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+
+.glass-light,
+[data-theme="glass-light"] {
+  --radius: 0.5rem;
+  --field-radius: 0.75rem;
+  --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+
+.glass-dark,
+[data-theme="glass-dark"] {
+  color-scheme: dark;
+  --radius: 0.5rem;
+  --field-radius: 0.75rem;
+  --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+
+.text-success-foreground {
+  color: var(--success-foreground);
+}
+
+.openclaw-install-stepper .stepper__indicator[data-status="complete"] {
+  color: var(--stepper-complete-color);
+}

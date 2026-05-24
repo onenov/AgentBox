@@ -1,0 +1,159 @@
+# Dependencies
+node_modules/
+*/node_modules/
+vendor/
+
+# Logs
+logs/
+*/logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+Server/tmp/build-errors.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional package-manager cache directories
+.npm
+.pnpm-store/
+.yarn/
+.turbo/
+node_modules/.cache/
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables and local secrets
+.env
+.env*
+.env.*
+*.env
+!.env.example
+!.env.sample
+!.env.template
+Client/.env
+Client/.env.*
+!Client/.env.example
+!Client/.env.sample
+!Client/.env.template
+AgentBox-Apple/
+**/RepositorySecrets.txt
+**/tauri-updater.key
+**/tauri-updater.password
+*.p8
+*.p12
+*.pem
+*.key
+*.crt
+*.cer
+*.certSigningRequest
+
+# parcel-builder cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+
+# Gatsby files
+.cache/
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+.tmp/
+Client/src-tauri/target/
+Client/src-tauri/binaries/*
+!Client/src-tauri/binaries/.gitkeep
+Server/bin/
+Server/tmp/
+Server/.air/
+Server/air.log
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+.idea
+.fleet/
+.DS_Store
+.AppleDouble
+.LSOverride
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploads
+uploads/
+
+# Build outputs
+dist/
+output/
+out/
+!Server/internal/web/dist/
+Server/internal/web/dist/*
+!Server/internal/web/dist/placeholder.txt
+Releases-Build/output/
+Releases-Build/**/*.zip
+Releases-Build/**/*.dmg
+Releases-Build/**/*.pkg
+Releases-Build/**/*.exe
+Releases-Build/**/*.msi
+Releases-Build/**/*.deb
+Releases-Build/**/*.rpm
+Client/src-tauri/gen/
+Client/src-tauri/bundle/
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.7z
+*.rar
+*.dSYM/
